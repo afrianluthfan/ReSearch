@@ -1,0 +1,22 @@
+filters:
+  and:
+    - file.folder == "90_Inbox/claude"
+    - (now() - file.mtime).days > 7
+formulas:
+  age_days: (now() - file.mtime).days
+properties:
+  formula.age_days:
+    displayName: Age (days)
+  file.name:
+    displayName: Note
+  file.mtime:
+    displayName: Last modified
+views:
+  - type: table
+    name: Stale Claude drafts (>7 days)
+    order:
+      - file.name
+      - formula.age_days
+      - file.mtime
+      - status
+      - tags
