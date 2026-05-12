@@ -1,6 +1,0 @@
-.mcp.json
-.claude/settings.local.json
-10_Sources/*/*.md
-20_Notes/*.md
-30_MOCs/*.md
-50_Questions/*.md
